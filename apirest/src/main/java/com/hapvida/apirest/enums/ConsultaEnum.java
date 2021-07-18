@@ -12,6 +12,11 @@ public class ConsultaEnum {
 			PENDENTE 
 		}
 	
+	public enum EspecieEnum { 
+		FELINO, 
+		ROEDOR, 
+		CANINO}
+	
 	private ConsultaEnum status = null; 
 	
 

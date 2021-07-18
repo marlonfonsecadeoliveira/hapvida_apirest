@@ -9,6 +9,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Columns;
 
+//Desenvolvido por Marlon fonseca de oliveira 17/07/2021
+
 @Entity
 @Table(name = "TB_Tutor")
 public class Tutor {

@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+//Desenvolvido por Marlon fonseca de oliveira 17/07/2021
+
 
 @Entity
 @Table(name = "TB_Usuario")

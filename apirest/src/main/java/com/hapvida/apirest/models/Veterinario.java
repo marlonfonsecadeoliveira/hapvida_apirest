@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+//Desenvolvido por Marlon fonseca de oliveira 17/07/2021
+
 @Entity
 @Table(name = "TB_Veterinario")
 public class Veterinario {

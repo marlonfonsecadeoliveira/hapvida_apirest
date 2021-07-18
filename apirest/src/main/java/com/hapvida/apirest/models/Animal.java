@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hapvida.apirest.models.Consulta.EspecieEnum;
 
+//Desenvolvido por Marlon fonseca de oliveira 17/07/2021
+
 
 @Entity
 @Table(name = "TB_Animal")
