@@ -2,16 +2,16 @@ package com.hapvida.apirest.models;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.hapvida.apirest.enums.ConsultaEnum;
-
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "TB_Consulta")
@@ -21,20 +21,41 @@ public class Consulta {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "id")
 	private long id;
 
-	public enum ConsultaEnum { 
+	public enum StatusEnum { 
 		ATIVO, 
 		INATIVO, 
 		PENDENTE }
 	
+	
+	public enum EspecieEnum { 
+		FELINO, 
+		ROEDOR, 
+		CANINO}
+	
 	//@Getter
 	//@Setter
+	@Column(name = "dataConsulta")
 	private Date dataConsulta;
 	
 	//@Getter
 	//@Setter
-	private ConsultaEnum status = null;
+	@Column(name = "status")
+	private StatusEnum status;
+	
+	
+	@ManyToOne
+	@JoinColumn(name = "idAnimal", referencedColumnName = "id")
+	@JsonIgnore
+	private Animal animal;
+
+	
+	@ManyToOne
+	@JoinColumn(name = "idVeterinario", referencedColumnName = "id")
+	@JsonIgnore
+	private Veterinario veterinario;
 	  
 	  
 	  
@@ -55,13 +76,31 @@ public class Consulta {
 		this.dataConsulta = dataConsulta;
 	}
 
-	public ConsultaEnum getStatus() {
+	public StatusEnum getStatus() {
 		return status;
 	}
 
-	public void setStatus(ConsultaEnum status) {
+	public void setStatus(StatusEnum status) {
 		this.status = status;
 	}
+
+	public Animal getAnimal() {
+		return animal;
+	}
+
+	public void setAnimal(Animal animal) {
+		this.animal = animal;
+	}
+
+	public Veterinario getVeterinario() {
+		return veterinario;
+	}
+
+	public void setVeterinario(Veterinario veterinario) {
+		this.veterinario = veterinario;
+	}
+
+	
 
 	
 	
